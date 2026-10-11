@@ -51,7 +51,38 @@ Potential metadata fields include age, sex and anatomical site. Their actual ava
 
 The diagnosis label must not be included as a model input.
 
-## 6. Verification Checklist
+## 6. Metadata Preview — Initial Verification
+
+**Source:** Harvard Dataverse, HAM10000 dataset, Version 4.0  
+**File:** `HAM10000_metadata.tab`  
+**Preview status:** Successfully opened and inspected in the browser.
+
+The file listing reports 10,015 observations and 8 variables.
+
+### Columns observed
+
+- `lesion_id` — lesion identifier.
+- `image_id` — image identifier.
+- `dx` — diagnosis label.
+- `dx_type` — diagnostic confirmation type.
+- `age` — patient age.
+- `sex` — patient sex.
+- `localization` — anatomical location.
+- `dataset` — dataset/source category.
+
+### Initial modelling decisions
+
+1. Use `dx` as the prediction target, not as an input feature.
+2. Investigate `age`, `sex`, and `localization` as candidate metadata inputs.
+3. Use `image_id` to match image files to metadata records.
+4. Investigate repeated `lesion_id` values and use a lesion-aware data split to reduce data leakage.
+5. Verify the complete metadata file, image matching, missing values, and class distribution after obtaining the data.
+
+### Evidence and limitations
+
+A browser screenshot confirms the visible column names and sample rows. The complete dataset has not yet been downloaded or analysed, so the total number of unique lesions, missing-value counts, and class distribution remain unverified.
+
+## 7. Verification Checklist
 
 - [ ] Select the exact dataset version and source.
 - [ ] Read and record the applicable license and attribution requirements.
@@ -63,12 +94,12 @@ The diagnosis label must not be included as a model input.
 - [ ] Record the source URL and download date.
 - [ ] Keep the dataset outside the public GitHub repository unless redistribution is explicitly permitted.
 
-## 7. Current Conclusion
+## 8. Current Conclusion
 
 HAM10000 is a promising candidate for the project because the published dataset contains dermoscopic images and associated diagnostic information. However, the exact dataset version, metadata structure, matching and usage conditions must be verified before implementation.
 
 No dataset has yet been downloaded or analysed, and no model has been trained.
 
-## 8. Next Action
+## 9. Next Action
 
-Verify the selected source and obtain the permitted dataset files. Inspect the actual file structure and metadata before deciding on preprocessing or model implementation.
+Download the metadata file `HAM10000_metadata.tab` from the verified Harvard Dataverse dataset record. Inspect the complete file locally to confirm its column names, missing values, diagnosis class distribution, image identifiers, and repeated lesion identifiers. Record the download date and verify the file-to-image matching before downloading and processing the image archives.
