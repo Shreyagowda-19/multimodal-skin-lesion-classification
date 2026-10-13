@@ -103,3 +103,44 @@ No dataset has yet been downloaded or analysed, and no model has been trained.
 ## 9. Next Action
 
 Download the metadata file `HAM10000_metadata.tab` from the verified Harvard Dataverse dataset record. Inspect the complete file locally to confirm its column names, missing values, diagnosis class distribution, image identifiers, and repeated lesion identifiers. Record the download date and verify the file-to-image matching before downloading and processing the image archives.
+
+## 10. Initial Metadata Analysis — 13 October 2026
+
+**Status:** Completed successfully.
+
+### Environment
+- Python: 3.13.3
+- pandas: 3.0.6
+- Script: `src/inspect_metadata.py`
+
+### Verified results
+- Metadata records: 10,015
+- Columns: 8
+- Unique lesion identifiers: 7,470
+- Missing age values: 57
+- Missing values in the other seven columns: 0
+
+### Diagnosis distribution
+
+| Diagnosis label | Image records |
+|---|---:|
+| nv | 6,705 |
+| mel | 1,113 |
+| bkl | 1,099 |
+| bcc | 514 |
+| akiec | 327 |
+| vasc | 142 |
+| df | 115 |
+
+### Observations
+1. The metadata file was successfully loaded and inspected using pandas.
+2. The diagnosis labels are imbalanced, with `nv` representing the largest category.
+3. Multiple image records can share a `lesion_id`. Future training and test partitions must be separated by lesion identifier to reduce data leakage.
+4. Age has 57 missing values. The handling strategy has not yet been selected.
+5. The metadata inspection succeeded with exit code 0.
+
+### Limitations
+These results describe the metadata table only. The image archives have not yet been downloaded or checked for matching image files. No model has been trained, and no predictive performance has been measured.
+
+### Next action
+Create a reproducible dataset-quality analysis that checks duplicate records, image identifier uniqueness, missing values, diagnosis proportions, and repeated lesion identifiers. Save the analysis output as a report before beginning model development.
