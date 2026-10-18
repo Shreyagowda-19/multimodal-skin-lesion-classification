@@ -85,3 +85,37 @@ Inspect the candidate dataset's official source and documentation. Confirm the a
 
 **Next session**
 Complete dataset-quality analysis and preserve the results in the repository before proceeding to image preprocessing or model training.
+
+### Week Update — HAM10000 Metadata Quality Inspection
+
+**Status:** Completed
+
+**Work performed**
+- Inspected the HAM10000 metadata file.
+- Verified the number of records, columns, unique lesion IDs and unique image IDs.
+- Checked for duplicate rows, repeated image IDs and missing values.
+- Examined diagnosis class counts and proportions.
+- Analysed how many images are associated with each lesion.
+
+**Key findings**
+- Total image records: 10,015
+- Total metadata columns: 8
+- Unique lesion IDs: 7,470
+- Unique image IDs: 10,015
+- Fully duplicated rows: 0
+- Repeated image IDs: 0
+- Missing age values: 57
+- Lesions with more than one image: 1,956
+- Maximum images associated with one lesion: 6
+- Diagnosis classes: nv, mel, bkl, bcc, akiec, vasc and df
+
+**Observations and implications**
+- The diagnosis distribution is imbalanced, so evaluation must include class-sensitive metrics such as macro F1-score and per-class recall, in addition to accuracy.
+- Records belonging to the same lesion must be kept in the same data split to reduce data leakage.
+- Missing age values and other preprocessing decisions must be handled using a documented procedure.
+- The diagnosis field (`dx`) is the prediction target and must not be used as an input feature.
+
+**Next step**
+Verify the downloaded image files and confirm that their image IDs match the metadata before beginning image preprocessing or model development.
+
+**Important:** Dataset inspection has been completed. Model training and performance evaluation have not yet been performed.
