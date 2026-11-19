@@ -1,0 +1,43 @@
+Train
+Image records: 6412
+Unique lesions: 4780
+Diagnosis counts:
+dx
+akiec     216
+bcc       346
+bkl       689
+df         79
+mel       715
+nv       4280
+vasc       87
+
+Validation
+Image records: 1579
+Unique lesions: 1196
+Diagnosis counts:
+dx
+akiec      44
+bcc        78
+bkl       167
+df         18
+mel       162
+nv       1089
+vasc       21
+
+Test
+Image records: 2024
+Unique lesions: 1494
+Diagnosis counts:
+dx
+akiec      67
+bcc        90
+bkl       243
+df         18
+mel       236
+nv       1336
+vasc       34
+
+Lesion overlap checks:
+Train/validation: 0
+Train/test: 0
+Validation/test: 0

@@ -1,0 +1,35 @@
+
+METADATA HANDLING PLAN
+
+Dataset: HAM10000
+
+1. AGE
+- There are 57 missing age values.
+- Investigate age values recorded as zero before deciding how to handle them.
+- Consider median imputation for missing ages, fitted using training data only.
+- Preserve a record of missing values if useful for analysis.
+
+2. SEX
+- The dataset contains 57 values marked as unknown.
+- Preserve unknown as a category rather than guessing values.
+
+3. LOCALIZATION
+- The dataset contains 234 values marked as unknown.
+- Preserve unknown as a category during categorical encoding.
+
+4. IMAGE AND LESION IDENTIFIERS
+- image_id uniquely identifies each image in the inspected metadata.
+- lesion_id will be used to prevent images of the same lesion
+  from appearing across different data splits.
+
+5. TARGET LABEL
+- dx is the classification target.
+- dx must not be used as an input feature.
+
+6. DIAGNOSTIC TYPE
+- dx_type will be retained for dataset analysis.
+- It will not be used as an input feature in the initial model.
+
+STATUS
+These are proposed preprocessing decisions.
+They must be reviewed and implemented consistently.

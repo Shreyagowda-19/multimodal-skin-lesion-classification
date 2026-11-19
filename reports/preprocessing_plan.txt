@@ -1,0 +1,39 @@
+
+MULTIMODAL SKIN LESION CLASSIFICATION
+PREPROCESSING PLAN
+
+1. IMAGE DATA
+- Use the verified dermoscopic images from data/raw.
+- Preserve the original images.
+- Resize images to a consistent input size when preparing model inputs.
+- Normalize pixel values as required by the selected model.
+- Apply data augmentation only to training images, if needed.
+
+2. METADATA
+- Candidate input features: age, sex, and localization.
+- Inspect missing and unknown values before deciding how to handle them.
+- Encode categorical features into a numerical representation.
+- Scale numerical features if required by the selected model.
+- Do not use dx as an input feature because it is the target label.
+
+3. TARGET LABEL
+- Use dx as the seven-class classification target.
+- Preserve the original diagnosis labels and document any encoding.
+
+4. DATA SPLITTING
+- Split data by lesion_id so images of the same lesion cannot appear in both training and testing sets.
+- Keep the test set separate from model development.
+- Check class distributions across splits.
+
+5. MODEL EVALUATION
+- Compare an image-only baseline, a metadata-only baseline, and a multimodal model.
+- Evaluate using accuracy, precision, recall, F1-score, and a confusion matrix.
+- Report per-class performance because diagnosis categories are imbalanced.
+
+6. DATA SAFETY
+- Keep original dataset files unchanged.
+- Do not claim clinical diagnostic capability.
+- Record preprocessing decisions and experiments.
+
+STATUS
+This is a proposed plan. Preprocessing and model training have not started.

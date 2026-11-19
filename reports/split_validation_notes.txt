@@ -1,0 +1,28 @@
+
+DATA SPLITTING AND LEAKAGE CHECK
+
+Method: GroupShuffleSplit
+Grouping column: lesion_id
+Random state: 42
+
+PROPOSED SPLITS
+Training: 6,412 image records
+Validation: 1,579 image records
+Testing: 2,024 image records
+
+LEAKAGE CHECKS
+Train-validation lesion overlap: 0
+Train-test lesion overlap: 0
+Validation-test lesion overlap: 0
+
+INTERPRETATION
+The current split keeps all images belonging to the same lesion
+within one partition, preventing lesion-level overlap.
+
+LIMITATIONS
+GroupShuffleSplit does not guarantee balanced diagnosis proportions.
+Rare classes have relatively few examples in validation and test.
+The split should be reviewed before it is finalized for model evaluation.
+
+STATUS
+Proposed split inspected; model training has not started.

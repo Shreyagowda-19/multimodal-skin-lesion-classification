@@ -1,0 +1,17 @@
+{
+    "method": "StratifiedGroupKFold",
+    "outer_random_state": 42,
+    "inner_random_state": 43,
+    "total_images": 10015,
+    "total_unique_lesions": 7470,
+    "split_image_counts": {
+        "Train": 6409,
+        "Validation": 1602,
+        "Test": 2004
+    },
+    "lesion_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+    }
+}

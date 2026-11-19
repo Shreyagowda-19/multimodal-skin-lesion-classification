@@ -1,0 +1,73 @@
+METADATA QUALITY DETAILS
+
+Missing values:
+lesion_id        0
+image_id         0
+dx               0
+dx_type          0
+age             57
+sex              0
+localization     0
+dataset          0
+
+age value counts:
+age
+45.0    1299
+50.0    1187
+55.0    1009
+40.0     985
+60.0     803
+70.0     756
+35.0     753
+65.0     731
+75.0     618
+30.0     464
+80.0     404
+85.0     290
+25.0     247
+20.0     169
+5.0       86
+15.0      77
+NaN       57
+10.0      41
+0.0       39
+
+sex value counts:
+sex
+male       5406
+female     4552
+unknown      57
+
+localization value counts:
+localization
+back               2192
+lower extremity    2077
+trunk              1404
+upper extremity    1118
+abdomen            1022
+face                745
+chest               407
+foot                319
+unknown             234
+neck                168
+scalp               128
+hand                 90
+ear                  56
+genital              48
+acral                 7
+
+dx_type value counts:
+dx_type
+histo        5340
+follow_up    3704
+consensus     902
+confocal       69
+
+Age checks:
+Age below zero: 0
+Age above 100: 0
+Age equal to zero: 39
+
+Duplicate checks:
+Duplicate image IDs: 0
+Duplicate full rows: 0
