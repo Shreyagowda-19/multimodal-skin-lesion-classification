@@ -119,3 +119,22 @@ Complete dataset-quality analysis and preserve the results in the repository bef
 Verify the downloaded image files and confirm that their image IDs match the metadata before beginning image preprocessing or model development.
 
 **Important:** Dataset inspection has been completed. Model training and performance evaluation have not yet been performed.
+## November 19, 2026 – Image Data Loader and GitHub Integration
+
+### Work completed
+- Installed and verified PyTorch and Torchvision CPU versions.
+- Implemented `src/image_data_loader.py` using PyTorch Dataset and DataLoader.
+- Loaded dermoscopic images from the existing train, validation and test split manifest.
+- Resized images to 224 × 224 pixels and converted them to RGB tensors.
+- Verified a training batch containing 16 images with shape `[16, 3, 224, 224]`.
+- Verified corresponding label batches for all 7 diagnosis classes.
+- Confirmed that the data loader successfully reads the training, validation and test partitions.
+- Connected the local project to the existing GitHub repository and successfully pushed the merged project history.
+
+### Current status
+The image data loading pipeline is implemented and tested. Image normalization, metadata preprocessing and model training are still pending.
+
+### Next steps
+- Add appropriate image normalization and training-only augmentation.
+- Prepare the metadata preprocessing pipeline.
+- Develop and test an image-only baseline model.
